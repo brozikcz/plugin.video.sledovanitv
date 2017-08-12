@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<strings>
+	<string id="30002">Živě</string>
+	<string id="30003">Download Path</string>
+	<string id="30004">Moje nahrávky</string>
+	<string id="30005">Hledání pořadu</string>
+	<string id="30006">Nastavení</string>
+	<string id="30007">Hledání pořadu</string>
+	<string id="30008">Odpojit zařízení od účtu</string>
+	<string id="30009">Rádia</string>
+
+
+	<string id="30020">Login</string>
+	<string id="30021">Heslo</string>
+	<string id="30022">Přihlásit</string>
+	<string id="30023">Prosím zadejte přihlašovací údaje pro sledovanitv.cz</string>
+	<string id="30024">Chybný login nebo heslo, zadejte je prosím znovu</string>
+
+	<string id="30030">Nemohu načíst seznam kanálů</string>
+	<string id="30031">Nemohu načíst nahrávky</string>
+	<string id="30032">Pořad nelze přehrát</string>
+</strings>

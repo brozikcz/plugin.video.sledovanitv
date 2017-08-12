@@ -1,0 +1,6 @@
+[B]Version 1.2.0[/B]
+- Removed python-utils dependency, so it works on Windows
+- Show current event for live channels
+
+[B]Version 1.0[/B]
+- Initial Version

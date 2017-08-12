@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<strings>
+	<string id="30002">Live</string>
+	<string id="30003">Download Path</string>
+	<string id="30004">My records</string>
+	<string id="30005">Search show</string>
+	<string id="30006">Settings</string>
+	<string id="30007">Show search</string>
+	<string id="30008">Disconnect from account</string>
+	<string id="30009">Radios</string>
+
+
+	<string id="30020">Username</string>
+	<string id="30021">Password</string>
+	<string id="30022">Login</string>
+	<string id="30023">Please enter your sledovanitv.cz credentials</string>
+	<string id="30024">Bad username or password, please try again</string>
+
+	<string id="30030">Cannot read playlist</string>
+	<string id="30031">Cannot read records</string>
+	<string id="30032">Cannot play this show</string>
+</strings>
+
