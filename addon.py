@@ -126,7 +126,7 @@ def getEpg():
     if value is not None:
         return eval(value)
 
-    response = apiCall("epg", {'time': getTime().strftime("%Y-%m-%d %H:%M"), 'duration': 180})
+    response = apiCall("epg", {'detail' : 1,'time': getTime().strftime("%Y-%m-%d %H:%M"), 'duration': 180})
 
     if isSuccess(response):
         channels = response['channels']
@@ -138,7 +138,8 @@ def getEpg():
             for event in list:
                 try:
                     parsedEvent = {'title': event['title'], 'start': parseTime(event['startTime']).strftime("%Y-%m-%d %H:%M:%S"), 
-                            'end': parseTime(event['endTime']).strftime("%Y-%m-%d %H:%M:%S"), 'avail': event['availability']}
+                            'end': parseTime(event['endTime']).strftime("%Y-%m-%d %H:%M:%S"), 'avail': event['availability'],
+                            'description' : event['description']}
                     newList.append(parsedEvent)
                 except ValueError:
                     # ignore bad events
@@ -202,14 +203,17 @@ def liveMenu(showType):
         for channel in channels:
             if channel['type'] == showType:
                 eventTitle = ""
+                eventDescription = ""
                 if channel['id'] in epg:
                     event = getEvent(now, epg[channel['id']])
                     if event is not None:
                         eventTitle = "   |  " + event['title']
+                        eventDescription = event['description']
 
                 u = sys.argv[0] + "?url=" + urllib.quote_plus(channel['url']) + "&mode=" + urllib.quote_plus(mode)
                 item = xbmcgui.ListItem(unicode("[B][COLOR white]" + channel["name"] + "[/COLOR][/B]" + eventTitle), 
                         iconImage=channel["logoUrl"], thumbnailImage=channel["logoUrl"])
+                item.setInfo('video', {'plot' : eventDescription})
                 item.setProperty('IsPlayable', 'true')
                 xbmcplugin.addDirectoryItem(handle=addon_handle, url=u, listitem=item, isFolder=False)
 
